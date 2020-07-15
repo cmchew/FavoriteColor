@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SurveyForm</title>
+
+</head>
+
+<body bgcolor="33FFB9">
+<h2>Survey</h2>
+
+<form action="#"
+      th:action="@{/surveyform}"
+      method="post"
+      th:object="${survey}">
+
+    Question 1: What is your Name?
+    <textarea rows="1" th:field="*{name}"></textarea>
+    <br>
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br/>
+
+    Question 2: What is your Quest?
+    <textarea rows="1" th:field="*{quest}"></textarea>
+    <br>
+    <span th:if="${#fields.hasErrors('quest')}"
+          th:errors="*{quest}"></span><br/>
+
+
+
+    <br>
+
+    <span th:if="${random==0}">
+    <p> Question 3:  "What is your favorite color? </p>
+         <textarea rows="1" th:field="*{color}"></textarea>
+         <span th:if="${#fields.hasErrors('color')}"
+               th:errors="*{color}"></span><br/>
+    </span>
+
+
+    <span th:unless="${random==0}">
+        <p>Question 3: What is the airspeed velocity of an unladen swallow?</p>
+         <textarea rows="2" th:field="*{color}"></textarea>
+ <span th:if="${#fields.hasErrors('color')}"
+       th:errors="*{color}"></span><br/>
+    </span>
+
+
+    <input type="submit" value="Answer"/>
+</form>
+
+
+
+
+</body>
+</html>

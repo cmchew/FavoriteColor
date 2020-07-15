@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body bgcolor="33FFB9">
+
+
+<!--<a th:href="@{/surveyform}"></a>-->
+<p th:inline="text">
+
+    You are [[${survey.name}]] and your quest is [[${survey.quest}]].
+    You may proceed across the Bridge!
+
+    <img src="https://live.staticflickr.com/1717/26297609525_59309f7800_b.jpg" width="256" height="170" alt="Bridge" align="left">
+
+
+</p>
+
+</body>
+</html>
